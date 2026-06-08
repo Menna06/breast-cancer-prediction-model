@@ -1,50 +1,37 @@
-# Breast Cancer Prediction Model
+# Breast Cancer Prediction & Model Benchmarking System
 
 ## Overview
 
-This project explores the application of machine learning for breast cancer diagnosis prediction using clinical tumor measurements. The objective was to evaluate multiple classification algorithms, compare their predictive performance, and identify the most influential diagnostic features contributing to accurate cancer detection.
+An end-to-end machine learning system designed to predict breast cancer diagnoses using clinical tumor measurements while benchmarking multiple classification algorithms within a unified evaluation framework.
 
-The system performs end-to-end machine learning analysis, including data preprocessing, outlier handling, feature scaling, model training, evaluation, and model explainability through feature importance analysis and coefficient interpretation.
-
----
-
-## Problem Statement
-
-Early and accurate breast cancer diagnosis is critical for improving treatment outcomes and reducing mortality rates. Medical datasets often contain complex relationships between tumor characteristics that are difficult to evaluate manually.
-
-This project was developed to investigate how machine learning models can assist in distinguishing between benign and malignant tumors by learning patterns from diagnostic measurements and providing interpretable prediction insights.
+The project combines data preprocessing, model comparison, explainability analysis, and automated visualization generation to identify the most reliable predictive models and the most influential diagnostic features.
 
 ---
 
-## Key Objectives
+## Highlights
 
-* Compare multiple machine learning classification algorithms
-* Evaluate predictive performance using multiple metrics
-* Identify the most influential diagnostic features
-* Improve data quality through preprocessing and outlier handling
-* Generate visual explanations to support model interpretation
-* Establish a repeatable machine learning evaluation pipeline
+* Benchmarked 7 machine learning classification algorithms
+* Achieved **98.98% accuracy** using Support Vector Machines (SVM)
+* Implemented automated preprocessing, scaling, and outlier handling pipelines
+* Evaluated models using Accuracy, Precision, Recall, F1 Score, and ROC-AUC
+* Generated explainability outputs through feature importance and coefficient analysis
+* Produced automated visual reports and exported evaluation metrics
 
 ---
+## Model Performance Comparison
 
-## Machine Learning Pipeline
+The chart below compares the predictive performance achieved by each machine learning algorithm evaluated throughout the project.
 
-### Data Preparation
+![Model Performance Comparison](images/Model_Performance_Comparison.png)
 
-* Label encoding of diagnosis classes
-* Duplicate record removal
-* Outlier detection using Z-score analysis
-* Feature standardization using StandardScaler
-* Train-test split for unbiased evaluation
+## Models Evaluated
 
-### Models Evaluated
-
-* Random Forest Classifier
-* XGBoost Classifier
-* Logistic Regression
 * Support Vector Machine (SVM)
+* Logistic Regression
+* XGBoost
+* Random Forest
 * K-Nearest Neighbors (KNN)
-* Decision Tree Classifier
+* Decision Tree
 * Gaussian Naive Bayes
 
 ---
@@ -61,32 +48,17 @@ This project was developed to investigate how machine learning models can assist
 | Gaussian Naive Bayes   |   94.90% |
 | Decision Tree          |   87.76% |
 
-### Evaluation Metrics
-
-Each model was assessed using:
-
-* Accuracy
-* Precision
-* Recall
-* F1 Score
-* ROC-AUC
-
-This multi-metric evaluation approach provides a more comprehensive understanding of classification quality than relying on accuracy alone.
-
 ---
 
-## Explainability & Feature Analysis
+## Best Performing Model
 
-To improve transparency and model interpretability, feature importance analysis was performed using:
+Support Vector Machines (SVM) achieved the highest classification accuracy of **98.98%**. The confusion matrix below illustrates the model's ability to correctly distinguish between benign and malignant tumor cases.
 
-* Random Forest Feature Importance
-* XGBoost Feature Importance
-* SVM Coefficient Analysis
-* KNN Permutation Importance
-* Decision Tree Importance
-* Gaussian Naive Bayes Permutation Importance
+![SVM Confusion Matrix](images/svm_confusion_matrix.png)
 
-Several tumor measurement features consistently emerged as high-impact predictors, including:
+## Key Insights
+
+Feature importance analysis consistently identified the following tumor characteristics as the strongest predictors:
 
 * Area (Worst)
 * Perimeter (Worst)
@@ -94,40 +66,38 @@ Several tumor measurement features consistently emerged as high-impact predictor
 * Concave Points (Worst)
 * Area (Mean)
 
-These findings provide insight into the tumor characteristics most strongly associated with diagnosis outcomes.
+These features demonstrated the highest predictive influence across multiple machine learning models.
 
 ---
+## Feature Importance Analysis
 
-## Generated Artifacts
+Random Forest feature importance analysis highlights the tumor characteristics that contributed most strongly to diagnostic predictions.
 
-The project automatically generates:
+![Random Forest Feature Importance](images/random_forest_importance.png)
 
-### Visualizations
+## Project Visualizations
 
-* Model Accuracy Comparison
-* SVM Confusion Matrix
-* Random Forest Feature Importance
-* XGBoost Feature Importance
-* SVM Coefficient Analysis
-* KNN Permutation Importance
-* Decision Tree Feature Importance
-* Gaussian Naive Bayes Feature Importance
+### Model Performance Comparison
 
-### Results
+Compares predictive accuracy across all evaluated machine learning algorithms.
 
-* Metrics Export (CSV)
-* Feature Importance Rankings
-* Model Comparison Outputs
+### SVM Confusion Matrix
+
+Visualizes classification performance of the highest-performing model.
+
+### Feature Importance Analysis
+
+Highlights the diagnostic features that contributed most significantly to model predictions.
 
 ---
 
 ## Technology Stack
 
-### Languages
+### Programming
 
 * Python
 
-### Data Science Libraries
+### Data Processing
 
 * Pandas
 * NumPy
@@ -155,39 +125,16 @@ breast-cancer-prediction-model/
 ├── README.md
 
 ├── images/
-│   ├── model_accuracy_comparison.png
-│   ├── svm_confusion_matrix.png
-│   ├── random_forest_importance.png
-│   ├── xgboost_importance.png
-│   ├── svm_coefficients.png
-│   ├── knn_importance.png
-│   ├── decision_tree_importance.png
-│   └── gaussian_nb_importance.png
-
 └── results/
-    └── metrics.csv
 ```
 
 ---
 
-## Engineering Highlights
+## Future Enhancements
 
-* Compared 7 machine learning classification algorithms within a unified evaluation framework
-* Implemented automated preprocessing and feature scaling pipelines
-* Applied outlier detection to improve dataset quality
-* Generated explainable AI outputs through feature importance analysis
-* Automated metric export and visualization generation
-* Established a reproducible workflow for model benchmarking and comparison
-
----
-
-## Future Improvements
-
-* Hyperparameter optimization
-* Cross-validation analysis
-* ROC Curve visualization
-* SHAP explainability integration
-* Model deployment through a web application
-* Real-time prediction interface
-
----
+* Hyperparameter Optimization
+* Cross Validation
+* SHAP Explainability
+* ROC Curve Analysis
+* Model Deployment
+* Interactive Prediction Dashboard
