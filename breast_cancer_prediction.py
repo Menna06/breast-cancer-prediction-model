@@ -109,24 +109,29 @@ plt.show()
 # Close figure
 plt.close()
 
-# Plot confusion matrix for each model
-for name, model in models.items():
+# ==========================
+# SVM Confusion Matrix
+# ==========================
 
-    if name != "SVM":
-        continue
+svm_model = SVC(probability=True, random_state=42)
+svm_model.fit(X_train_scaled, y_train)
 
-    y_pred = model.predict(X_test_scaled)
-    cm = confusion_matrix(y_test, y_pred)
+y_pred_svm = svm_model.predict(X_test_scaled)
 
-    disp = ConfusionMatrixDisplay(
-        confusion_matrix=cm,
-        display_labels=labelEncoder.classes_
-    )
+cm = confusion_matrix(y_test, y_pred_svm)
 
-    disp.plot(cmap=plt.cm.Blues)
-plt.title(f'Confusion Matrix - {name}')
+disp = ConfusionMatrixDisplay(
+    confusion_matrix=cm,
+    display_labels=labelEncoder.classes_
+)
+
+disp.plot(cmap=plt.cm.Blues)
+
+plt.title("Confusion Matrix - Support Vector Machine (SVM)")
 plt.tight_layout()
+
 plt.savefig("images/svm_confusion_matrix.png")
+plt.show()
 plt.close()
 
 # Clear all existing figures to prevent duplication
