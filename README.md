@@ -54,7 +54,7 @@ The chart below compares the predictive performance achieved by each machine lea
 
 Support Vector Machines (SVM) achieved the highest classification accuracy of **98.98%**. The confusion matrix below illustrates the model's ability to correctly distinguish between benign and malignant tumor cases.
 
-![SVM Confusion Matrix](images/svm_confusion_matrix.png)
+![SVM Confusion Matrix](images/svm_confusion_matrix_v2.png)
 
 ## Key Insights
 
